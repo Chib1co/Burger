@@ -41,7 +41,7 @@ const objToSql = (ob) => {
 //3 functions create the methods 
 //that will execute the necessary mySQl commans in the controllers
 const orm = {
-   selecrtAll(tableInput, cb){
+    selectAll(tableInput, cb){
        const queryString = `SELECT * FROM ${tableInput};`;
        connection.query(queryString, (err, result) =>{
            if(err) {throw err;}
