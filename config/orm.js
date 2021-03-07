@@ -44,10 +44,10 @@ const orm = {
    selecrtAll(tableInput, cb){
        const queryString = `SELECT * FROM ${tableInput};`;
        connection.query(queryString, (err, result) =>{
-           if(err) throw err;
-           
+           if(err) {throw err;}
+           cb(result);
        });
-       cb(result);
+       
     
    },
 insertOne(table, cols, vals, cb){
@@ -63,9 +63,9 @@ insertOne(table, cols, vals, cb){
     console.log(queryString);
 
     connection.query(queryString, vals, (err, result) => {
-        if(err) throw err;
+        if(err) {throw err;}
+        cb(result)
     })
-    connection(result)
 
 },
 updateOne(table, objColVals, condition, cb){
@@ -79,9 +79,10 @@ updateOne(table, objColVals, condition, cb){
         console.log(queryString);
 
     connection.query(queryString, function (err, result){
-        if(err) throw err;
+        if(err) {throw err;}
+        cb(result);
     })
-    cb(result);
+    
 
 
 },
