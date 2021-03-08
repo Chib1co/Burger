@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         button.addEventListener('click', (e) => {
           // Grabs the id of the element that goes by the name, "id"
           const id = e.target.getAttribute('data-id');
-          const newBurger = e.target.getAttribute('data-burger_name');
+          const newBurger = e.target.getAttribute('burger_name');
   
           const newBurgerState = {
-            sleepy: newBurger,
+            devoured: newBurger,
           };
   
           fetch(`/api/burgers/devoured/${id}`, {
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
         // Grabs the value of the textarea that goes by the name, "quote"
         const newBurger = {
-          name: document.getElementById('submit-burger').value.trim(),
+          name: document.getElementById('enter-burger').value.trim(),
         };
   
         // Send POST request to create a new quote
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           body: JSON.stringify(newBurger),
         }).then(() => {
           // Empty the form
-          document.getElementById('submit-burger').value = '';
+          document.getElementById('enter-burger').value = '';
   
           // Reload the page so the user can see the new quote
           console.log('Created a new burger!');

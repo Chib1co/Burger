@@ -51,7 +51,7 @@ const orm = {
     
    },
 insertOne(table, cols, vals, cb){
-    let queryString = `INSERTO INTO ${table}`;
+    let queryString = `INSERT INTO ${table}`;
 
     queryString += ' (';
     queryString += cols.toString();
