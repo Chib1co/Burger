@@ -22,8 +22,8 @@ router.post('/api/burgers', (req, res) => {
       });
     });
 
-router.put("/api/burgers/:id", function (req,res) {
-    const condition = req.params.id
+router.put("/api/burgers/devoured/:id", function (req,res) {
+    const condition = `${req.params.id}`
     const boolean = req.body.devoured
      console.log('condition', condition);
 

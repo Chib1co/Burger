@@ -31,12 +31,12 @@ const objToSql = (ob) => {
         arr.push(`${key}=${value}`);
       }
     }
-  
+
     // Translate array of strings to a single comma-separated string
     return arr.toString();
   };
   
-  
+
   
 //3 functions create the methods 
 //that will execute the necessary mySQl commans in the controllers

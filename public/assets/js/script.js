@@ -8,19 +8,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
     // Set up the event listener for the create button
     if (changeDevouredBtn) {
-        changeDevouredBtn.forEach((button) => {
-        button.addEventListener('click', (e) => {
+      changeDevouredBtn.forEach((button) => {
+          button.addEventListener('click', (e) => {
           e.preventDefault();
           // Grabs the id of the element that goes by the name, "id"
           const id = e.target.getAttribute('data-id');
-          console.log(id)
-          const newBurger = e.target.getAttribute('burger_name');
-  
-          const newBurgerState = {
+        
+          const newDevourState = {
             devoured: true,
           };
   
-          fetch(`/api/burgers/${id}`, {
+          fetch(`/api/burgers/devoured/${id}`, {
             method: 'PUT',
             headers: {
               Accept: 'application/json',
@@ -28,19 +26,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
             },
   
             // make sure to serialize the JSON body
-            body: JSON.stringify(newBurgerState),
+            body: JSON.stringify(newDevourState),
           }).then((response) => {
             // Check that the response is all good
             // Reload the page so the user can see the new quote
             if (response.ok) {
-              console.log(`changed to devour: ${newBurger}`);
               location.reload('/');
             } else {
               alert('something went wrong!');
             }
           });
         });
-      });
+      
+      })
     }
   
     // CREATE
