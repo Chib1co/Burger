@@ -10,6 +10,7 @@
       <a href="#about-the-project">About The Project</a>
     </li>
       <li><a href="#built-with">Built With</a></li>
+       <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#Learning">Learning</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -22,15 +23,9 @@
 ## About The Project
 Using Node.js, Express, Handlebars, and Orm to create restaurant application.
 
-* First inquirer prompt when you run node index.js
-![First Inquirer Prompt](image/firstPrompt.png "first run")
+* Page view
 
-* showing database tables 
-![Show DB tables](image/showTable.png "showing db table")
-
-* Demo movie of the functions
-
-![Demo movie](image/sampleGif.gif "Demo movie how to run")
+![Page view](./public/assets/img/demoPage.png)
 
 
 
@@ -39,14 +34,22 @@ Using Node.js, Express, Handlebars, and Orm to create restaurant application.
 Major framework I used to create this application.
 
 * [MYSQL](https://www.npmjs.com/package/mysql)
-* [InquirerJs](https://www.npmjs.com/package/inquirer/v/0.2.3)
 * [Express](https://expressjs.com/)
+* [Handlebars](https://www.npmjs.com/package/handlebars)
 
+## Getting Started
 
+To use Eat-Da-Burger locally, use http://localhost:8080 after completing the following steps:
+
+```js
+git clone github.com/Chib1co/Burger.git
+npm install
+node server.js
+```
 
 ## Learning
 
-Using mysql and organizing the database by using node.js. I struggled for making update function, from what data I can get from the answer and what I can pass it to. Ended up those bonus functions helped me to understand it deeper. 
+Using mysql, orm and handlebars, express to build an application. It was really good practice to how to set folders, files and navigate to each files. Learn how to use callback function too.
 
 <!-- LICENSE -->
 ## License

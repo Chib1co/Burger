@@ -7,7 +7,6 @@
   }
   
   body {
-    background-image: url("./public/assets/img/tim-mossholder-FH3nWjvia-U-unsplash.jpg");
     background-size: cover;
     background-position: 50%;
     width: 100vw;
@@ -43,6 +42,10 @@
   
   h3 {
     font-size: 20px;
+  }
+  #gif{
+    width: 350px;
+    height: auto;
   }
   #burger-name:placeholder {
     color: rgb(190, 190, 190);
