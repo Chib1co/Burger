@@ -22,7 +22,7 @@ router.post('/api/burgers', (req, res) => {
       });
     });
 
-router.put("/api/burgers/devoured/:id", function (req,res) {
+router.put("/api/burgers/:id", function (req,res) {
     const condition = `id = ${req.params.id}`;
     const boolean = {devoured: true}
     // console.log('condition', condition);

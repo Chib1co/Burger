@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             },
   
             // make sure to serialize the JSON body
-            body: newBurgerState
+            body: JSON.stringify(newBurgerState),
           }).then((response) => {
             // Check that the response is all good
             // Reload the page so the user can see the new quote
