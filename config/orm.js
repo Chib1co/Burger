@@ -68,8 +68,9 @@ insertOne(table, cols, vals, cb){
     })
 
 },
-updateOne(table, col, boolean, condition, cb) {
-    const querySting = `UPDATE ${table} SET ${col} = ${boolean} WHERE ${condition}`;
+updateOne(table, boolean, condition, cb) {
+    const querySting = `UPDATE ${table} SET${boolean} WHERE ${condition}`;
+    // const querySting = `UPDATE burgers SET devoured = true WHERE id = 11`;
     connection.query(querySting, function (err, result) {
       if (err) {
         throw err
