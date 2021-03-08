@@ -11,14 +11,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         changeDevouredBtn .forEach((button) => {
         button.addEventListener('click', (e) => {
           // Grabs the id of the element that goes by the name, "id"
-          const id = e.target.getAttribute('data-id');
+          const id = e.target.getAttribute('burgers-id');
           const newBurger = e.target.getAttribute('burger_name');
   
           const newBurgerState = {
             devoured: true,
           };
   
-          fetch(`/api/burgers/devoured/${id}`, {
+          fetch(`/api/burgers/${id}`, {
             method: 'PUT',
             headers: {
               Accept: 'application/json',
@@ -75,25 +75,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
       });
     }
   
-    // DELETE
-    const deleteCatBtns = document.querySelectorAll('.delete-cat');
-  
-    // Set up the event listeners for each delete button
-    deleteCatBtns.forEach((button) => {
-      button.addEventListener('click', (e) => {
-        const id = e.target.getAttribute('data-id');
-  
-        // Send the delete request
-        fetch(`/api/cats/${id}`, {
-          method: 'DELETE',
-        }).then((res) => {
-          console.log(res);
-          console.log(`Deleted cat: ${id}`);
-  
-          // Reload the page
-          location.reload();
-        });
-      });
-    });
-  });
-  
+});

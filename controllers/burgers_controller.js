@@ -23,18 +23,26 @@ router.post('/api/burgers', (req, res) => {
     });
 
 router.put("/api/burgers/:id", function (req,res) {
+    console.log(req)
+    console.log(res)
     const condition = `id = ${req.params.id}`;
-    const boolean = {devoured: true}
-    // console.log('condition', condition);
+    // const boolean = `devoured = true`
+     console.log('condition', condition);
 
-    burger.updateOne(boolean, condition, function (result) {
-        if (result.changedRows === 0) {
-          //if no rows were changed, the ID must not exist so 404
-          return res.status(404).end();
-        }
+    // burger.updateOne(boolean, condition, function (result) {
+    //     if (result.changedRows === 0) {
+    //       //if no rows were changed, the ID must not exist so 404
+    //       return res.status(404).end();
+    //     }
         
-        res.status(202).end();
-      });
+    //     res.status(202).end();
+    //   });
+      burger.updateOne({
+        devoured: true
+    }, condition, function (data) {
+        res.redirect("/");
+
+    });
     });
 
 module.exports = router
