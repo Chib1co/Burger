@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   
     // UPDATE
-    const changeDevouredBtn = document.querySelectorAll('.change-devoured');
+    const changeDevouredBtn = document.querySelectorAll('#burger-ready');
   
     // Set up the event listener for the create button
     if (changeDevouredBtn ) {

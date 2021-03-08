@@ -68,24 +68,17 @@ insertOne(table, cols, vals, cb){
     })
 
 },
-updateOne(table, objColVals, condition, cb){
-    let queryString = "UPDATE " + table;
-
-    queryString += " SET ";
-        queryString += objToSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
-
-        console.log(queryString);
-
-    connection.query(queryString, function (err, result){
-        if(err) {throw err;}
-        cb(result);
-    })
-    
-
-
-},
+updateOne(table, col, boolean, condition, cb) {
+    const querySting = `UPDATE ${table} SET ${col} = ${boolean} WHERE ${condition}`;
+    connection.query(querySting, function (err, result) {
+      if (err) {
+        throw err
+      };
+      cb(result);
+    });
+  },
 }
+
+
 
 module.exports = orm;

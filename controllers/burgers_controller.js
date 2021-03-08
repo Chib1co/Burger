@@ -25,14 +25,14 @@ router.post('/api/burgers', (req, res) => {
 router.put("/api/burgers/devoured/:id", function (req,res) {
     const condition = `id = ${req.params.id}`;
     const boolean = req.body.devoured;
-    console.log('condition', condition);
+    // console.log('condition', condition);
 
     burger.updateOne(boolean, condition, function (result) {
         if (result.changedRows === 0) {
           //if no rows were changed, the ID must not exist so 404
           return res.status(404).end();
         }
-        // console.log(`changeRows: ${result.changedRows}`);
+        
         res.status(202).end();
       });
     });
