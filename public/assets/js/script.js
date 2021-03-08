@@ -7,11 +7,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const changeDevouredBtn = document.querySelectorAll('#burger-ready');
   
     // Set up the event listener for the create button
-    if (changeDevouredBtn ) {
-        changeDevouredBtn .forEach((button) => {
+    if (changeDevouredBtn) {
+        changeDevouredBtn.forEach((button) => {
         button.addEventListener('click', (e) => {
+          e.preventDefault();
           // Grabs the id of the element that goes by the name, "id"
-          const id = e.target.getAttribute('burgers-id');
+          const id = e.target.getAttribute('data-id');
+          console.log(id)
           const newBurger = e.target.getAttribute('burger_name');
   
           const newBurgerState = {
