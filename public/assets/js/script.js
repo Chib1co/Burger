@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
         // Grabs the value of the textarea that goes by the name, "quote"
         const newBurger = {
-          name: document.getElementById('enter-burger').value.trim(),
+          burger_name: document.getElementById('enter-burger').value.trim(),
+          devoured:false,
         };
   
         // Send POST request to create a new quote
