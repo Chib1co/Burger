@@ -23,8 +23,9 @@ router.post('/api/burgers', (req, res) => {
     });
 
 router.put("/api/burgers/devoured/:id", function (req,res) {
-    const condition = `${req.params.id}`
-    const boolean = req.body.devoured
+    // const condition = `{id} ${req.params.id}`
+    const condition = {id:req.params.id};
+    const boolean = {devoured:req.body.devoured};
      console.log('condition', condition);
 
     burger.updateOne(boolean, condition, function (result) {
